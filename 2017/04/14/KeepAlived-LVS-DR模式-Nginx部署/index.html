@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="apache php," />
+  <meta name="keywords" content="keepalive nginx," />
 
 
 
@@ -87,17 +87,17 @@
 
 
 
-<meta name="description" content="apache安装 #创建并进入目录mkdir -p /data/lamp/packages/cd /data/lamp/packages/packages #下载wget http://apache.opencas.org/httpd/httpd-2.2.31.tar.gz #解压tar zxf httpd-2.2.31.tar.gz #编译和安装cd httpd-2.2.31./configur">
-<meta name="keywords" content="apache php">
+<meta name="description" content="KeepAlived+LVS+Nginx/Apache：高可用负载均衡 实验环境：IP：192.168.119.233(VIP)IP：192.168.119.128(Master/xxx.abc.com)IP：192.168.119.129(Backup/yyy.abc.com)IP：192.168.119.10(RS/Nginx)IP：192.168.119.11(RS/Nginx)(两台也可以">
+<meta name="keywords" content="keepalive nginx">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Apache2.2+PHP5.6安装">
-<meta property="og:url" content="http://yoursite.com/2017/04/14/Apache2.2+PHP5.6安装/index.html">
+<meta property="og:title" content="KeepAlived+LVS(DR模式)+Nginx部署">
+<meta property="og:url" content="http://yoursite.com/2017/04/14/KeepAlived-LVS-DR模式-Nginx部署/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="apache安装 #创建并进入目录mkdir -p /data/lamp/packages/cd /data/lamp/packages/packages #下载wget http://apache.opencas.org/httpd/httpd-2.2.31.tar.gz #解压tar zxf httpd-2.2.31.tar.gz #编译和安装cd httpd-2.2.31./configur">
-<meta property="og:updated_time" content="2017-04-14T07:16:28.199Z">
+<meta property="og:description" content="KeepAlived+LVS+Nginx/Apache：高可用负载均衡 实验环境：IP：192.168.119.233(VIP)IP：192.168.119.128(Master/xxx.abc.com)IP：192.168.119.129(Backup/yyy.abc.com)IP：192.168.119.10(RS/Nginx)IP：192.168.119.11(RS/Nginx)(两台也可以">
+<meta property="og:updated_time" content="2017-04-14T07:25:18.303Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Apache2.2+PHP5.6安装">
-<meta name="twitter:description" content="apache安装 #创建并进入目录mkdir -p /data/lamp/packages/cd /data/lamp/packages/packages #下载wget http://apache.opencas.org/httpd/httpd-2.2.31.tar.gz #解压tar zxf httpd-2.2.31.tar.gz #编译和安装cd httpd-2.2.31./configur">
+<meta name="twitter:title" content="KeepAlived+LVS(DR模式)+Nginx部署">
+<meta name="twitter:description" content="KeepAlived+LVS+Nginx/Apache：高可用负载均衡 实验环境：IP：192.168.119.233(VIP)IP：192.168.119.128(Master/xxx.abc.com)IP：192.168.119.129(Backup/yyy.abc.com)IP：192.168.119.10(RS/Nginx)IP：192.168.119.11(RS/Nginx)(两台也可以">
 
 
 
@@ -125,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/04/14/Apache2.2+PHP5.6安装/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/04/14/KeepAlived-LVS-DR模式-Nginx部署/"/>
 
 
 
 
 
-  <title> Apache2.2+PHP5.6安装 | Blog </title>
+  <title> KeepAlived+LVS(DR模式)+Nginx部署 | Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -260,7 +260,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/14/Apache2.2+PHP5.6安装/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/14/KeepAlived-LVS-DR模式-Nginx部署/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Anonymous">
@@ -281,7 +281,7 @@
             
             
               
-                Apache2.2+PHP5.6安装
+                KeepAlived+LVS(DR模式)+Nginx部署
               
             
           </h1>
@@ -296,7 +296,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-14T15:16:30+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-14T15:20:44+08:00">
                 2017-04-14
               </time>
             
@@ -319,8 +319,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/web-server/" itemprop="url" rel="index">
-                    <span itemprop="name">web server</span>
+                  <a href="/categories/linux/" itemprop="url" rel="index">
+                    <span itemprop="name">linux</span>
                   </a>
                 </span>
 
@@ -354,17 +354,85 @@
       
 
       
-        <p>apache安装</p>
-<p>#创建并进入目录<br>mkdir -p /data/lamp/packages/<br>cd /data/lamp/packages/packages</p>
-<p>#下载<br>wget <a href="http://apache.opencas.org/httpd/httpd-2.2.31.tar.gz" target="_blank" rel="external">http://apache.opencas.org/httpd/httpd-2.2.31.tar.gz</a></p>
-<p>#解压<br>tar zxf httpd-2.2.31.tar.gz</p>
-<p>#编译和安装<br>cd httpd-2.2.31<br>./configure –prefix=/data/lamp/http –enable-so –enable-rewirte<br>make &amp;&amp; make install</p>
-<p>#安装PHP<br>cd /data/lamp/packages<br>wget <a href="http://php.net/get/php-5.6.21.tar.gz" target="_blank" rel="external">http://php.net/get/php-5.6.21.tar.gz</a></p>
-<p>#解压<br>tar zxf php-5.6.21.tar.gz<br>cd php-5.6.21</p>
-<p>#编译和安装<br>./configure –prefix=/data/lamp/php –with-apxs2=/data/lamp/http/bin/apxs –with-mysql<br>make &amp;&amp; make install</p>
-<p>#备份并修改httpd配置<br>cd /data/lamp/http/conf<br>cp http.conf http.conf.bak<br>vi http.conf<br>查看是否有 LoadModule php5_module        modules/libphp5.so这一行<br>如果没有的话就在最后一行下面添加<br>在AddType application/x-gzip .gz .tgz下面添加AddType application/x-httpd-php php .php .php5 .php4 这一行<br>去掉ServerName前面的#号注释，并将后面的内容改成127.0.0.1<br>修改完成后保存退出</p>
-<p>#写一个php测试页<br>cd /data/lamp/http/htdocs/<br>vi phpinfo.php<br>&lt;?php<br>    phpinfo();<br>?&gt;<br>保存退出</p>
-<p>#启动apache<br>/data/lamp/http/bin/apachectl -k start<br>打开浏览器输入地址: 127.0.0.1/phpinfo.php<br>就会出来php的info页面了</p>
+        <p>KeepAlived+LVS+Nginx/Apache：高可用负载均衡</p>
+<p>实验环境：<br>IP：192.168.119.233(VIP)<br>IP：192.168.119.128(Master/xxx.abc.com)<br>IP：192.168.119.129(Backup/yyy.abc.com)<br>IP：192.168.119.10(RS/Nginx)<br>IP：192.168.119.11(RS/Nginx)<br>(两台也可以，把两台Nginx分别合并到节点服务器上，但是会偶尔出现卡顿的现象)</p>
+<p>前提条件：<br>1、节点服务器的时间需要用ntp服务来同步<br>2、节点服务器之间使用ssh免密码登陆<br>3、节点服务器上需要配置hosts文件，能够以主机名通信<br>4、节点服务器最好关闭iptables，如果不关闭需要自己写iptables策略<br>(如发现keepalived+lvs配置好后有问题，可按照上述四点检查)</p>
+<p>部署过程：</p>
+<p>安装ipvsadm<br>[root@xxx ~]#yum -y install ipvsadm libnl<em> popt</em><br>[root@xxx ~]#ln -s   /usr/kernels/2.6.32-431.17.1.el6.x86_64/ /usr/src/linux<br>[root@xxx ~]#ipvsadm<br>[root@xxx ~]#lsmod | grep ip_vs<br>ip_vs                115643  3 ip_vs_rr<br>libcrc32c              1246  1 ip_vs<br>ipv6                  321422  137 ip_vs</p>
+<p>安装KeepAlived<br>[root@xxx media]#yum -y install openssl openssl-devel<br>[root@xxx media]#wget <a href="http://www.keepalived.org/software/keepalived-1.1.19.tar.gz" target="_blank" rel="external">http://www.keepalived.org/software/keepalived-1.1.19.tar.gz</a><br>[root@xxx media]#tar zxf keepalived-1.1.19.tar.gz<br>[root@xxx media]#cd keepalived-1.1.19<br>[root@xxx keepalived-1.1.19]#./configure  –prefix=/ \</p>
+<blockquote>
+<p>mandir=/usr/local/share/man \<br>with-kernel-dir=/usr/src/linux<br>[root@xxx keepalived-1.1.19]#make &amp;&amp; make install</p>
+</blockquote>
+<p>修改KeepAlived配置文件<br>[root@xxx ~]#cd /etc/keepalived/<br>[root@xxx keepalived]#cp keepalived.conf keepalived.conf.bak<br>[root@xxx keepalived]#vi keepalived.conf<br>! Configuration File for keepalived</p>
+<p>global_defs {<br>   notification_email {<br>     xxx@xxxx.com                                               #发生故障时收件邮箱<br>   }<br>   notification_email_from yyy@xxxx.com        #发生故障时发件邮箱<br>   smtp_server smtp.163.com                             #发件邮箱的smtp服务器<br>   smtp_connect_timeout 30                              #发件smtp服务器连接超时时间<br>   router_id LVS_DEVEL_1                                   #全网唯一标识，不能重复<br>}</p>
+<p>vrrp_instance VI_1 {<br>    state MASTER                                    #标示为主LVS(MASTER)<br>    interface eth0                                    #HA检测端口<br>    virtual_router_id 51                           #主备的virtual_router_id必须一样<br>    priority 100                                        #优先级，备lvs的优先级要比主lvs优先级小<br>    advert_int 1                                        #广播周期秒数，检测主lvs存活<br>    authentication {                                 #定义认证<br>        auth_type PASS                              #定义认证方式<br>        auth_pass 1111                               #定义认证的密码<br>    }<br>    virtual_ipaddress {<br>        192.168.119.233                               #定义VIP，多个VIP可换行添加<br>    }<br>}</p>
+<p>virtual_server 192.168.119.233 80 {<br>    delay_loop 6                                        #查看RS状态的间隔时间<br>    lb_algo wlc                                          #定义调度算法<br>    lb_kind DR                                           #定义LVS工作模式<br>    nat_mask 255.255.255.0                      #定义VIP的子网掩码<br>    persistence_timeout 0                         #同一IP的连接多少秒内被分配到同一台RS，这里定义为0是为了方便后面的测试<br>    protocol TCP                                        #用TCP监测RS状态</p>
+<pre><code>real_server 192.168.119.10 80 {                #定义RS的ip和端口
+    weight 1                                                  #定义权重
+TCP_CHECK  {                                              #TCK_CHECK和{之间需要两个空格，否则无法添加下面的RS
+        connect_timeout 3                              #定义响应超时时间
+        nb_get_retry 3                                      #响应失败后重试次数，超过设定次数将自动移除RS
+        delay_before_retry 3                            #超时间隔
+        connect_port 80                                   #需要监测的端口(服务)
+    }
+}
+
+real_server 192.168.119.11 80 {
+    weight 1
+TCP_CHECK  {
+        connect_timeout 3
+        nb_get_retry 3
+        delay_before_retry 3
+    connect_port 80
+    }
+}
+</code></pre><p>}</p>
+<p>备LVS的keepalived.conf设置，将主LVS的keepalived.conf文件copy一份到备LVS的/etc/keepailved/下，然后修改下面参数即可<br>router_id LVS_DEVEL_2<br>state BACKUP<br>priority 99</p>
+<p>放到RS下需要用到的脚本<br>[root@xxx media]#vi /etc/init.d/lvsrs</p>
+<p>#!/bin/bash</p>
+<p>VIP=192.168.119.233                #修改成对应的VIP，可添加多个</p>
+<p>case $1 in</p>
+<pre><code>start_dr)
+
+ifconfig lo:1 $VIP netmask 255.255.255.255 broadcast $VIP
+
+echo &quot;2&quot; &gt;/proc/sys/net/ipv4/conf/lo/arp_announce
+
+echo &quot;2&quot; &gt;/proc/sys/net/ipv4/conf/all/arp_announce
+
+echo &quot;1&quot; &gt;/proc/sys/net/ipv4/conf/lo/arp_ignore
+
+echo &quot;1&quot; &gt;/proc/sys/net/ipv4/conf/all/arp_ignore
+
+;;
+
+stop_dr)
+
+ifdown lo
+
+ifup lo
+
+echo &quot;0&quot; &gt;/proc/sys/net/ipv4/conf/lo/arp_announce
+
+echo &quot;0&quot; &gt;/proc/sys/net/ipv4/conf/all/arp_announce
+
+echo &quot;0&quot; &gt;/proc/sys/net/ipv4/conf/lo/arp_ignore
+
+echo &quot;0&quot; &gt;/proc/sys/net/ipv4/conf/all/arp_ignore
+
+;;
+
+*)
+
+echo &quot;please input parameter:start_dr or stop_dr&quot;
+
+;;
+</code></pre><p>esac<br>[root@xxx media]#chmod +x /etc/init.d/lvsrs</p>
+<p>Nginx部署：<br>[root@xxx media]#yum -y install pcre<em> openssl</em> zlib zlib-devel<br>[root@xxx media]#wget <a href="http://nginx.org/download/nginx-1.7.0.tar.gz" target="_blank" rel="external">http://nginx.org/download/nginx-1.7.0.tar.gz</a><br>[root@xxx media]#tar zxf nginx-1.7.0.tar.gz<br>[root@xxx media]#cd nginx-1.7.0<br>[root@xxx nginx-1.7.0]#./configure –prefix=/usr/local/nginx-1.7.0 \            #编译的参数看自己的需要添加</p>
+<blockquote>
+<p>–with-http_ssl_module –with-http_spdy_module \<br>–with-http_stub_status_module –with-prce<br>[root@xxx nginx-1.7.0]#make &amp;&amp; make install<br>[root@xxx nginx-1.7.0]#cd /usr/local/nginx/conf<br>[root@xxx conf]#vi nginx.conf<br>location / {<br>        root   /srv/www/;#修改根目录，具体的参数根据实际要求要修改，这里只做实验用，所以只修改该处方便使用<br>        index  index.html index.htm;<br>}<br>[root@xxx conf]#vi /etc/init.d/nginx            #创建一个nginx启动关闭脚本<br>[root@xxx conf]#chmod +x /etc/init.d/nginx<br>[root@xxx conf]#mkdir /srv/www/ &amp;&amp; cd /srv/www/<br>[root@xxx www]#echo “192.168.119.128” &gt; index.html<br>[root@xxx www]#vi /etc/sysctl.conf<br>net.ipv4.ip_forward = 1                    #将此参数改为1，开启路由转发功能<br>[root@xxx www]sysctl -p<br>[root@xxx www]#/etc/init.d/nginx start<br>[root@xxx www]#/etc/init.d/keepalived start<br>[root@xxx www]#cat /var/log/message                    #可以查看日志文件判断当前节点是MASTER STATE还是BACKUP STATE<br>[root@xxx www]#ipvsadm<br>IP Virtual Server version 1.2.1 (size=4096)<br>Prot LocalAddress:Port Scheduler Flags<br>  -&gt; RemoteAddress:Port           Forward Weight ActiveConn InActConn<br>TCP  192.168.119.233:http wlc<br>  -&gt; 192.168.119.10:http         Route   1      0          0<br>  -&gt; 192.168.119.11:http         Route   1      0          0<br>(<em>备LVS的配置过程跟上面一样</em>)</p>
+</blockquote>
+<p>测试：<br>HA测试：关闭192.168.119.128上的keepalived服务，192.168.119.129上的keepalived状态会变成MASTER STATE<br>负载均衡测试：打开浏览器，在地址栏输入 192.168.119.233，会随机跳转到一台RS上，清空浏览器缓存，刷新页面则会跳到另外一台RS上</p>
 
       
     </div>
@@ -394,7 +462,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/apache-php/" rel="tag"># apache php</a>
+            <a href="/tags/keepalive-nginx/" rel="tag"># keepalive nginx</a>
           
         </div>
       
@@ -407,15 +475,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/04/14/KeepAlived-LVS-DR模式-Nginx部署/" rel="next" title="KeepAlived+LVS(DR模式)+Nginx部署">
-                <i class="fa fa-chevron-left"></i> KeepAlived+LVS(DR模式)+Nginx部署
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/04/14/Apache2.2+PHP5.6安装/" rel="prev" title="Apache2.2+PHP5.6安装">
+                Apache2.2+PHP5.6安装 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
