@@ -94,7 +94,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/04/17/Oracle数据库基础之二/index.html">
 <meta property="og:site_name" content="Blog">
 <meta property="og:description" content="Oracle数据库基础数据类型NUMBER- 数字类型 - NUMBER(P,S)：P表示数字的总位数，S表示小数位数 CHAR- 固定长度的字符类型，最大2000字节 - CHAR(N):N表示字节长度 VARCHAR2- 变长的字符类型，最大4000字节 - VARCHAR2(N)：N表示最大可占用字节长度 DATE- 定义日期时间的类型，长度是7个字节 - DD-MON-RR 创建表CREA">
-<meta property="og:updated_time" content="2017-04-17T08:39:16.702Z">
+<meta property="og:updated_time" content="2017-04-17T08:41:39.621Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Oracle数据库基础之二">
 <meta name="twitter:description" content="Oracle数据库基础数据类型NUMBER- 数字类型 - NUMBER(P,S)：P表示数字的总位数，S表示小数位数 CHAR- 固定长度的字符类型，最大2000字节 - CHAR(N):N表示字节长度 VARCHAR2- 变长的字符类型，最大4000字节 - VARCHAR2(N)：N表示最大可占用字节长度 DATE- 定义日期时间的类型，长度是7个字节 - DD-MON-RR 创建表CREA">
@@ -379,19 +379,18 @@
 <h2 id="DML语句"><a href="#DML语句" class="headerlink" title="DML语句"></a>DML语句</h2><h3 id="DML语句需要在执行DML语句后再执行commit才会生效"><a href="#DML语句需要在执行DML语句后再执行commit才会生效" class="headerlink" title="DML语句需要在执行DML语句后再执行commit才会生效"></a><em>DML语句需要在执行DML语句后再执行commit才会生效</em></h3><h3 id="INSERT语句"><a href="#INSERT语句" class="headerlink" title="INSERT语句"></a>INSERT语句</h3><pre><code>- 向表中插入记录
 - 如果插入的列有日期字段，需要考虑日期的格式(默认为DD-MON-RR)
 - 可以用TO_DATE函数自定义日期格式
-</code></pre><p>###<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">INSERT INTO myemp(id, name, job, birth, salary) VALUES(</div><div class="line">	1003, &apos;donna&apos;, &apos;MANAGER&apos;, TO_DATE(&apos;2017-04-17&apos;, &apos;YYYY-MM-DD&apos;), 4000</div><div class="line">);</div></pre></td></tr></table></figure></p>
-<p>###</p>
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">INSERT INTO myemp(id, name, job, birth, salary) VALUES(</div><div class="line">	1003, &apos;donna&apos;, &apos;MANAGER&apos;, TO_DATE(&apos;2017-04-17&apos;, &apos;YYYY-MM-DD&apos;), 4000</div><div class="line">);</div></pre></td></tr></table></figure>
 <h3 id="UPDATE语句"><a href="#UPDATE语句" class="headerlink" title="UPDATE语句"></a>UPDATE语句</h3><pre><code>- 更新表的记录
-</code></pre><p>###<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">UPDATE myemp SET salary = 8500 WHERE name = &apos;donna&apos;;</div></pre></td></tr></table></figure></p>
-<p>###</p>
-<h3 id="DELETE语句"><a href="#DELETE语句" class="headerlink" title="DELETE语句"></a>DELETE语句</h3><pre><code>- 删除表中的记录
+- UPDATE myemp SET salary = 8500 WHERE name = &apos;donna&apos;;
+</code></pre><h3 id="DELETE语句"><a href="#DELETE语句" class="headerlink" title="DELETE语句"></a>DELETE语句</h3><pre><code>- 删除表中的记录
 - DDL语句中的TRUNCATE语句也可以删除表的记录
 - DELETE和TRUNCATE区别
     - DELETE可以有条件删除，TRUNCATE是清空表中的所有记录
     - DELETE是DML语句，可以回退，TRUNCATE是DDL语句，即时生效无法回退
     - 当删除表的全部记录时，TRUNCATE效率比DELETE高
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">DELETE FROM myemp;</div><div class="line">TRUNCATE TABLE myemp;</div></pre></td></tr></table></figure>
-<hr>
+- DELETE FROM myemp;
+- TRUNCATE TABLE myemp;
+</code></pre><hr>
 
       
     </div>
