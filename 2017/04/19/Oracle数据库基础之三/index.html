@@ -87,17 +87,17 @@
 
 
 
-<meta name="description" content="Oracle数据库基础二数据类型NUMBER- 数字类型 - NUMBER(P,S)：P表示数字的总位数，S表示小数位数 CHAR- 固定长度的字符类型，最大2000字节 - CHAR(N):N表示字节长度 VARCHAR2- 变长的字符类型，最大4000字节 - VARCHAR2(N)：N表示最大可占用字节长度 DATE- 定义日期时间的类型，长度是7个字节 - DD-MON-RR 创建表CRE">
+<meta name="description" content="Oracle数据库基础之三字符串类型CHAR和VARCHAR2类型- CHAR存放定长字符，存不满补空格 - VARCHAR2存放变长字符，存多少占用多少 - 按照字符的自然顺序排序 - 默认单位是字节，可指定为字符 - CHAR不指定长度时默认为1，VARCHAR2必须指定长度 LONG和CLOB类型- LONG是VARCHAR2加长版，最多存储2GB的字符串数据 - LONG的限制     -">
 <meta name="keywords" content="Oracle">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Oracle数据库基础之二">
-<meta property="og:url" content="http://yoursite.com/2017/04/17/Oracle数据库基础之二/index.html">
+<meta property="og:title" content="Oracle数据库基础之三">
+<meta property="og:url" content="http://yoursite.com/2017/04/19/Oracle数据库基础之三/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="Oracle数据库基础二数据类型NUMBER- 数字类型 - NUMBER(P,S)：P表示数字的总位数，S表示小数位数 CHAR- 固定长度的字符类型，最大2000字节 - CHAR(N):N表示字节长度 VARCHAR2- 变长的字符类型，最大4000字节 - VARCHAR2(N)：N表示最大可占用字节长度 DATE- 定义日期时间的类型，长度是7个字节 - DD-MON-RR 创建表CRE">
-<meta property="og:updated_time" content="2017-04-19T01:06:38.188Z">
+<meta property="og:description" content="Oracle数据库基础之三字符串类型CHAR和VARCHAR2类型- CHAR存放定长字符，存不满补空格 - VARCHAR2存放变长字符，存多少占用多少 - 按照字符的自然顺序排序 - 默认单位是字节，可指定为字符 - CHAR不指定长度时默认为1，VARCHAR2必须指定长度 LONG和CLOB类型- LONG是VARCHAR2加长版，最多存储2GB的字符串数据 - LONG的限制     -">
+<meta property="og:updated_time" content="2017-04-19T07:53:09.520Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Oracle数据库基础之二">
-<meta name="twitter:description" content="Oracle数据库基础二数据类型NUMBER- 数字类型 - NUMBER(P,S)：P表示数字的总位数，S表示小数位数 CHAR- 固定长度的字符类型，最大2000字节 - CHAR(N):N表示字节长度 VARCHAR2- 变长的字符类型，最大4000字节 - VARCHAR2(N)：N表示最大可占用字节长度 DATE- 定义日期时间的类型，长度是7个字节 - DD-MON-RR 创建表CRE">
+<meta name="twitter:title" content="Oracle数据库基础之三">
+<meta name="twitter:description" content="Oracle数据库基础之三字符串类型CHAR和VARCHAR2类型- CHAR存放定长字符，存不满补空格 - VARCHAR2存放变长字符，存多少占用多少 - 按照字符的自然顺序排序 - 默认单位是字节，可指定为字符 - CHAR不指定长度时默认为1，VARCHAR2必须指定长度 LONG和CLOB类型- LONG是VARCHAR2加长版，最多存储2GB的字符串数据 - LONG的限制     -">
 
 
 
@@ -125,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/04/17/Oracle数据库基础之二/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/04/19/Oracle数据库基础之三/"/>
 
 
 
 
 
-  <title> Oracle数据库基础之二 | Blog </title>
+  <title> Oracle数据库基础之三 | Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -260,7 +260,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/17/Oracle数据库基础之二/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/19/Oracle数据库基础之三/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Anonymous">
@@ -281,7 +281,7 @@
             
             
               
-                Oracle数据库基础之二
+                Oracle数据库基础之三
               
             
           </h1>
@@ -296,8 +296,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-17T15:17:06+08:00">
-                2017-04-17
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-19T09:05:27+08:00">
+                2017-04-19
               </time>
             
 
@@ -354,44 +354,68 @@
       
 
       
-        <h1 id="Oracle数据库基础二"><a href="#Oracle数据库基础二" class="headerlink" title="Oracle数据库基础二"></a>Oracle数据库基础二</h1><h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><h3 id="NUMBER"><a href="#NUMBER" class="headerlink" title="NUMBER"></a>NUMBER</h3><pre><code>- 数字类型
-- NUMBER(P,S)：P表示数字的总位数，S表示小数位数
-</code></pre><h3 id="CHAR"><a href="#CHAR" class="headerlink" title="CHAR"></a>CHAR</h3><pre><code>- 固定长度的字符类型，最大2000字节
-- CHAR(N):N表示字节长度
-</code></pre><h3 id="VARCHAR2"><a href="#VARCHAR2" class="headerlink" title="VARCHAR2"></a>VARCHAR2</h3><pre><code>- 变长的字符类型，最大4000字节
-- VARCHAR2(N)：N表示最大可占用字节长度
-</code></pre><h3 id="DATE"><a href="#DATE" class="headerlink" title="DATE"></a>DATE</h3><pre><code>- 定义日期时间的类型，长度是7个字节
-- DD-MON-RR
-</code></pre><h2 id="创建表"><a href="#创建表" class="headerlink" title="创建表"></a>创建表</h2><h3 id="CREATE语句"><a href="#CREATE语句" class="headerlink" title="CREATE语句"></a>CREATE语句</h3><pre><code>- 创建表employee
-</code></pre><h3 id="DESC语句"><a href="#DESC语句" class="headerlink" title="DESC语句"></a>DESC语句</h3><pre><code>- 查看表的结构 DESC employee
-</code></pre><h3 id="DEFAULT语句"><a href="#DEFAULT语句" class="headerlink" title="DEFAULT语句"></a>DEFAULT语句</h3><pre><code>- 可以通过DEFAULT字句给列指定默认值
-</code></pre><h3 id="NOT-NULL"><a href="#NOT-NULL" class="headerlink" title="NOT NULL"></a>NOT NULL</h3><pre><code>- 确保字段值不为空
-- 默认所有列都允许有空值
-</code></pre><h3 id="例："><a href="#例：" class="headerlink" title="例："></a>例：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">CREATE TABLE employee(</div><div class="line">	id NUMBER(4),</div><div class="line">	name VARCHAR2(20) NOT NULL,</div><div class="line">	gender CHAR(1) DEFAULT &apos;M&apos;,</div><div class="line">	birth DATE,</div><div class="line">	salary NUMBER(6,2),</div><div class="line">	job VARCHAR2(30),</div><div class="line">	deptno NUMBER(2)</div><div class="line">)</div></pre></td></tr></table></figure>
-<h2 id="修改表"><a href="#修改表" class="headerlink" title="修改表"></a>修改表</h2><h3 id="修改表名"><a href="#修改表名" class="headerlink" title="修改表名"></a>修改表名</h3><pre><code>- RENAME old_name TO new_name;
-</code></pre><h3 id="增加列"><a href="#增加列" class="headerlink" title="增加列"></a>增加列</h3><pre><code>- 列只能增加在最后，不能插入
-- ALTER TABLE table_name ADD(Field DataType);
-</code></pre><h3 id="删除列"><a href="#删除列" class="headerlink" title="删除列"></a>删除列</h3><pre><code>- ALTER TABLE table_name DROP(Field);
-</code></pre><h3 id="修改列"><a href="#修改列" class="headerlink" title="修改列"></a>修改列</h3><pre><code>- 修改仅对以后插入的数据有效，不影响当前数据
-- 如果把长度由大改小，有可能不成功
-- ALTER TABLE table_name MODIFY(Field DataType);
-</code></pre><h3 id="例：-1"><a href="#例：-1" class="headerlink" title="例："></a>例：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">RENAME employee TO myemp;</div><div class="line">ALTER TABLE myemp ADD(hiredate DATE DEFAULT sysdate);</div><div class="line">ALTER TABLE myemp MODIFY(job VARCHAR2(40) DEFAULT &apos;IT&apos;);</div><div class="line">ALTER TABLE myemp DROP(hiredate);</div></pre></td></tr></table></figure>
-<h2 id="DML语句"><a href="#DML语句" class="headerlink" title="DML语句"></a>DML语句</h2><h3 id="DML语句需要在执行DML语句后再执行commit才会生效"><a href="#DML语句需要在执行DML语句后再执行commit才会生效" class="headerlink" title="DML语句需要在执行DML语句后再执行commit才会生效"></a><em>DML语句需要在执行DML语句后再执行commit才会生效</em></h3><h3 id="INSERT语句"><a href="#INSERT语句" class="headerlink" title="INSERT语句"></a>INSERT语句</h3><pre><code>- 向表中插入记录
-- 如果插入的列有日期字段，需要考虑日期的格式(默认为DD-MON-RR)
-- 可以用TO_DATE函数自定义日期格式
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">INSERT INTO myemp(id, name, job, birth, salary) VALUES(</div><div class="line">	1003, &apos;donna&apos;, &apos;MANAGER&apos;, TO_DATE(&apos;2017-04-17&apos;, &apos;YYYY-MM-DD&apos;), 4000</div><div class="line">);</div></pre></td></tr></table></figure>
-<h3 id="UPDATE语句"><a href="#UPDATE语句" class="headerlink" title="UPDATE语句"></a>UPDATE语句</h3><pre><code>- 更新表的记录
-- UPDATE myemp SET salary = 8500 WHERE name = &apos;donna&apos;;
-</code></pre><h3 id="DELETE语句"><a href="#DELETE语句" class="headerlink" title="DELETE语句"></a>DELETE语句</h3><pre><code>- 删除表中的记录
-- DDL语句中的TRUNCATE语句也可以删除表的记录
-- DELETE和TRUNCATE区别
-    - DELETE可以有条件删除，TRUNCATE是清空表中的所有记录
-    - DELETE是DML语句，可以回退，TRUNCATE是DDL语句，即时生效无法回退
-    - 当删除表的全部记录时，TRUNCATE效率比DELETE高
-- DELETE FROM myemp;
-- TRUNCATE TABLE myemp;
-</code></pre><hr>
-
+        <h1 id="Oracle数据库基础之三"><a href="#Oracle数据库基础之三" class="headerlink" title="Oracle数据库基础之三"></a>Oracle数据库基础之三</h1><h2 id="字符串类型"><a href="#字符串类型" class="headerlink" title="字符串类型"></a>字符串类型</h2><h3 id="CHAR和VARCHAR2类型"><a href="#CHAR和VARCHAR2类型" class="headerlink" title="CHAR和VARCHAR2类型"></a>CHAR和VARCHAR2类型</h3><pre><code>- CHAR存放定长字符，存不满补空格
+- VARCHAR2存放变长字符，存多少占用多少
+- 按照字符的自然顺序排序
+- 默认单位是字节，可指定为字符
+- CHAR不指定长度时默认为1，VARCHAR2必须指定长度
+</code></pre><h3 id="LONG和CLOB类型"><a href="#LONG和CLOB类型" class="headerlink" title="LONG和CLOB类型"></a>LONG和CLOB类型</h3><pre><code>- LONG是VARCHAR2加长版，最多存储2GB的字符串数据
+- LONG的限制
+    - 每个表只能有一个LONG类型字段
+    - 不能作为主键
+    - 不能建立索引
+    - 不能出现在查询条件中
+- CLOB存储定长或变长字符串，最多达4G的字符串数据
+- ORACLE建议开发中使用CLOB替代LONG
+</code></pre><h2 id="字符串函数"><a href="#字符串函数" class="headerlink" title="字符串函数"></a>字符串函数</h2><h3 id="CONCAT和”-”"><a href="#CONCAT和”-”" class="headerlink" title="CONCAT和”||”"></a>CONCAT和”||”</h3><pre><code>- CONCAT(CHAR1，CHAR2)返回两个字符串拼接后的结构
+- ||字符串拼接，比CONCAT更直观更方便
+</code></pre><h3 id="LENGTH"><a href="#LENGTH" class="headerlink" title="LENGTH"></a>LENGTH</h3><pre><code>- 用于返回字符串的长度
+- 如果字符类型是VARCHAR2，返回实际长度
+- 如果字符类型是CHAR，返回定长的CHAR
+</code></pre><h3 id="UPPER、LOWER和INITCAP"><a href="#UPPER、LOWER和INITCAP" class="headerlink" title="UPPER、LOWER和INITCAP"></a>UPPER、LOWER和INITCAP</h3><pre><code>- 伪表(dual)
+    - 不是一张真实存在的表，当查询的内容与任何表数据无关时，可以使用伪表
+    - eg: SELECT SYSDATE FROM dual
+- 大小写转换函数，用来转换字符的大小写
+- UPPER(char)-------------大写: UPPER(&apos;helloworld&apos;)
+- LOWER(char)-------------小写：LOWER(&apos;HELLOWORLD&apos;)
+- INITCAP(char)-----------每个单词首字母大写，单词之间需用空格分隔：INITCAP(&apos;HELLO WORLD&apos;)
+</code></pre><h3 id="TRIM、LTRIM、RTRIM"><a href="#TRIM、LTRIM、RTRIM" class="headerlink" title="TRIM、LTRIM、RTRIM"></a>TRIM、LTRIM、RTRIM</h3><pre><code>- 去除字符串两端的指定字符
+- 语法形式
+    - TRIM(c2 FROM c1)：从c1的前后去除字符c2
+    - LTRIM(c1[,c2])：从c1的左边去除字符c2
+    - RTRIM(c1[,c2])：从c1的右边去除字符c2
+    - 如果没有c2表示去除空格
+</code></pre><h3 id="LPAD、RPAD"><a href="#LPAD、RPAD" class="headerlink" title="LPAD、RPAD"></a>LPAD、RPAD</h3><pre><code>- 补位函数
+- 语法形式
+    - LPAD(char1, n, char2)：左补位函数
+    - RPAD(char1, n, char2)：右补位函数
+    - 在字符串char1的左边(或右边)用char2补足到n位，char2可重复多次
+</code></pre><h3 id="SUBSTR"><a href="#SUBSTR" class="headerlink" title="SUBSTR"></a>SUBSTR</h3><pre><code>- SUBSTR(char，m[,n])：获取字符串的子串，返回char中从m位开始取n个字符
+- m为0时，表示从首字符开始，m为负数，表示从尾字符开始
+- 如果不设置n或者n的长度超过char的长度，则取到字符串末尾为止
+</code></pre><h3 id="INSTR"><a href="#INSTR" class="headerlink" title="INSTR"></a>INSTR</h3><pre><code>- INSTR(char1， char2[,n[,m]])
+- 查看char2在char1中的位置，m为从开始查找的位置，默认为1，n为第几次出现，默认为1，返回char1在char2中的起始位置
+- 在char2中找不到char1时返回0
+</code></pre><p>##</p>
+<h2 id="数值函数"><a href="#数值函数" class="headerlink" title="数值函数"></a>数值函数</h2><h3 id="ROUND"><a href="#ROUND" class="headerlink" title="ROUND"></a>ROUND</h3><pre><code>- ROUND(n[,m])：四舍五入保留n小数点后m位
+- 若m不写(默认为0)则表示保留到个位
+- 若m是负数则是保留小数点前m位
+</code></pre><h3 id="TRUNC"><a href="#TRUNC" class="headerlink" title="TRUNC"></a>TRUNC</h3><pre><code>- TRUNC(n[,m])：用于截取
+- n和m的定义和ROUND相同，不同的是功能上按照截取的方式处理数字n
+</code></pre><h3 id="MOD"><a href="#MOD" class="headerlink" title="MOD"></a>MOD</h3><pre><code>- MOD(M, N)：返回m除以n后的余数
+- n为0则直接返回m
+</code></pre><h3 id="CEIL和FLOOR"><a href="#CEIL和FLOOR" class="headerlink" title="CEIL和FLOOR"></a>CEIL和FLOOR</h3><pre><code>- CEIL(n)：向上取整，取大于或等于n的最小整数值
+- FLOOR(n)：向下取整，取小于或等于n的最大整数值
+</code></pre><h2 id="日期类型"><a href="#日期类型" class="headerlink" title="日期类型"></a>日期类型</h2><h3 id="DATE"><a href="#DATE" class="headerlink" title="DATE"></a>DATE</h3><pre><code>- Oracle中最常用的日期类型
+- 范围：公元前4712年1月1日至公元9999年12月31日
+- 在数据库中固定存储7个字节
+</code></pre><h3 id="TIMESTAMP"><a href="#TIMESTAMP" class="headerlink" title="TIMESTAMP"></a>TIMESTAMP</h3><pre><code>- Oracle常用的日期类型
+- 可以保存小数秒，最高精度可以到纳秒
+- 需要7-11个字节存储
+</code></pre><h2 id="日期关键字"><a href="#日期关键字" class="headerlink" title="日期关键字"></a>日期关键字</h2><h3 id="SYSDATE"><a href="#SYSDATE" class="headerlink" title="SYSDATE"></a>SYSDATE</h3><pre><code>- Oracle内部函数，返回当前的系统时间，精确到秒
+- 默认显示格式是DD-MON-RR
+</code></pre><h3 id="SYSTIMESTAMP"><a href="#SYSTIMESTAMP" class="headerlink" title="SYSTIMESTAMP"></a>SYSTIMESTAMP</h3><pre><code>- Oracle内部函数，返回当前系统时间的时间戳
+</code></pre>
       
     </div>
 
@@ -433,18 +457,14 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/04/17/Java类的继承/" rel="next" title="Java类的继承">
-                <i class="fa fa-chevron-left"></i> Java类的继承
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/04/17/Oracle数据库基础之一/" rel="prev" title="Oracle数据库基础之一">
-                Oracle数据库基础之一 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/04/17/Java关键字static和final/" rel="prev" title="Java关键字static和final">
+                Java关键字static和final <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -596,7 +616,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Oracle数据库基础二"><span class="nav-number">1.</span> <span class="nav-text">Oracle数据库基础二</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据类型"><span class="nav-number">1.1.</span> <span class="nav-text">数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#NUMBER"><span class="nav-number">1.1.1.</span> <span class="nav-text">NUMBER</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CHAR"><span class="nav-number">1.1.2.</span> <span class="nav-text">CHAR</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#VARCHAR2"><span class="nav-number">1.1.3.</span> <span class="nav-text">VARCHAR2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DATE"><span class="nav-number">1.1.4.</span> <span class="nav-text">DATE</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建表"><span class="nav-number">1.2.</span> <span class="nav-text">创建表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CREATE语句"><span class="nav-number">1.2.1.</span> <span class="nav-text">CREATE语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DESC语句"><span class="nav-number">1.2.2.</span> <span class="nav-text">DESC语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DEFAULT语句"><span class="nav-number">1.2.3.</span> <span class="nav-text">DEFAULT语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#NOT-NULL"><span class="nav-number">1.2.4.</span> <span class="nav-text">NOT NULL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#例："><span class="nav-number">1.2.5.</span> <span class="nav-text">例：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改表"><span class="nav-number">1.3.</span> <span class="nav-text">修改表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#修改表名"><span class="nav-number">1.3.1.</span> <span class="nav-text">修改表名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#增加列"><span class="nav-number">1.3.2.</span> <span class="nav-text">增加列</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除列"><span class="nav-number">1.3.3.</span> <span class="nav-text">删除列</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改列"><span class="nav-number">1.3.4.</span> <span class="nav-text">修改列</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#例：-1"><span class="nav-number">1.3.5.</span> <span class="nav-text">例：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DML语句"><span class="nav-number">1.4.</span> <span class="nav-text">DML语句</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DML语句需要在执行DML语句后再执行commit才会生效"><span class="nav-number">1.4.1.</span> <span class="nav-text">DML语句需要在执行DML语句后再执行commit才会生效</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#INSERT语句"><span class="nav-number">1.4.2.</span> <span class="nav-text">INSERT语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#UPDATE语句"><span class="nav-number">1.4.3.</span> <span class="nav-text">UPDATE语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DELETE语句"><span class="nav-number">1.4.4.</span> <span class="nav-text">DELETE语句</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Oracle数据库基础之三"><span class="nav-number">1.</span> <span class="nav-text">Oracle数据库基础之三</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#字符串类型"><span class="nav-number">1.1.</span> <span class="nav-text">字符串类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CHAR和VARCHAR2类型"><span class="nav-number">1.1.1.</span> <span class="nav-text">CHAR和VARCHAR2类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LONG和CLOB类型"><span class="nav-number">1.1.2.</span> <span class="nav-text">LONG和CLOB类型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字符串函数"><span class="nav-number">1.2.</span> <span class="nav-text">字符串函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CONCAT和”-”"><span class="nav-number">1.2.1.</span> <span class="nav-text">CONCAT和”||”</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LENGTH"><span class="nav-number">1.2.2.</span> <span class="nav-text">LENGTH</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#UPPER、LOWER和INITCAP"><span class="nav-number">1.2.3.</span> <span class="nav-text">UPPER、LOWER和INITCAP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TRIM、LTRIM、RTRIM"><span class="nav-number">1.2.4.</span> <span class="nav-text">TRIM、LTRIM、RTRIM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LPAD、RPAD"><span class="nav-number">1.2.5.</span> <span class="nav-text">LPAD、RPAD</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SUBSTR"><span class="nav-number">1.2.6.</span> <span class="nav-text">SUBSTR</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#INSTR"><span class="nav-number">1.2.7.</span> <span class="nav-text">INSTR</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数值函数"><span class="nav-number">1.3.</span> <span class="nav-text">数值函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ROUND"><span class="nav-number">1.3.1.</span> <span class="nav-text">ROUND</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TRUNC"><span class="nav-number">1.3.2.</span> <span class="nav-text">TRUNC</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MOD"><span class="nav-number">1.3.3.</span> <span class="nav-text">MOD</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CEIL和FLOOR"><span class="nav-number">1.3.4.</span> <span class="nav-text">CEIL和FLOOR</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#日期类型"><span class="nav-number">1.4.</span> <span class="nav-text">日期类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DATE"><span class="nav-number">1.4.1.</span> <span class="nav-text">DATE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TIMESTAMP"><span class="nav-number">1.4.2.</span> <span class="nav-text">TIMESTAMP</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#日期关键字"><span class="nav-number">1.5.</span> <span class="nav-text">日期关键字</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#SYSDATE"><span class="nav-number">1.5.1.</span> <span class="nav-text">SYSDATE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SYSTIMESTAMP"><span class="nav-number">1.5.2.</span> <span class="nav-text">SYSTIMESTAMP</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
